@@ -32,11 +32,14 @@ public class RentACatTest {
 		// INITIALIZE THE TEST FIXTURE
 		// 1. Create a new RentACat object and assign to r
 		r = RentACat.createInstance();
+		c1 = new Cat(1, "Jennyanydots");
+		c2 = new Cat(2, "Old Deuteronomy");
+		c3 = new Cat(3, "Mistoffelees");
 		// 2. Create a mock Cat with ID 1 and name "Jennyanydots", assign to c1
 		// TODO: Fill in
-		c1 = Mockito.mock(CatJenny.class);
-		c2 = Mockito.mock(CatOld.class);
-		c3 = Mockito.mock(CatMist.class);
+		//c1 = Mockito.mock(CatJenny.class);
+		//c2 = Mockito.mock(CatOld.class);
+		//c3 = Mockito.mock(CatMist.class);
 		/*
 		public Cat(int id, String name) {
 			_rented = false;
