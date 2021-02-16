@@ -87,7 +87,7 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
-		assertEquals(2, r.getCat(2));
+		assertEquals(2, r.getCat(2).getId());
 	}
 
 	/**
