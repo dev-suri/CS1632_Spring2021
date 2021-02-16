@@ -32,28 +32,19 @@ public class RentACatTest {
 		// INITIALIZE THE TEST FIXTURE
 		// 1. Create a new RentACat object and assign to r
 		r = RentACat.createInstance();
-		c1 = new Cat(1, "Jennyanydots");
-		c2 = new Cat(2, "Old Deuteronomy");
-		c3 = new Cat(3, "Mistoffelees");
-		// 2. Create a mock Cat with ID 1 and name "Jennyanydots", assign to c1
-		// TODO: Fill in
-		//c1 = Mockito.mock(CatJenny.class);
-		//c2 = Mockito.mock(CatOld.class);
-		//c3 = Mockito.mock(CatMist.class);
-		/*
-		public Cat(int id, String name) {
-			_rented = false;
-			_id = id;
-			_name = name;
-		}
-		*/
-		
-		// 3. Create a mock Cat with ID 2 and name "Old Deuteronomy", assign to c2
-		// TODO: Fill in
-		//c2 = Mockito.mock(Cat.class);
-		// 4. Create a mock Cat with ID 3 and name "Mistoffelees", assign to c3
-		// TODO: Fill in
-		//c3 = Mockito.mock(Cat.class);
+		//
+		c1 = Mockito.mock(Cat.class);
+		Mockito.when(c1.getId()).thenReturn(1);
+		Mockito.when(c1.getName()).thenReturn("Jennyanydots");
+		//
+		c2 = Mockito.mock(Cat.class);
+		Mockito.when(c2.getId()).thenReturn(2);
+		Mockito.when(c2.getName()).thenReturn("Old Deuteronomy");
+		//
+		c3 = Mockito.mock(Cat.class);
+		Mockito.when(c3.getId()).thenReturn(3);
+		Mockito.when(c3.getName()).thenReturn("Mistoffelees");
+
 		// Hint: You will have to stub the mocked Cats to make them behave as if the ID
 		// is 1 and name is "Jennyanydots", etc.
 	}
