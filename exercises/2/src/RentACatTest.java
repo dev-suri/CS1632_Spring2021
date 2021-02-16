@@ -118,7 +118,7 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
-		c3.rentCat();
+		r.rentCat(3);
 		assertEquals(r.catAvailable(2), true);
 	}
 
@@ -137,7 +137,7 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
-		c2.rentCat();
+		r.rentCat(2);
 		assertEquals(r.catAvailable(2), false);
 	}
 
@@ -233,7 +233,7 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
-		c2.rentCat();
+		r.rentCat(2);
 		assertEquals(r.rentCat(2), false);
 		
 	}
@@ -270,7 +270,7 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
-		c2.rentCat();
+		r.rentCat(2);
 		assertEquals(r.returnCat(2), true);
 	}
 }
