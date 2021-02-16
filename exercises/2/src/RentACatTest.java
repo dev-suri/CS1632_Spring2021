@@ -32,16 +32,25 @@ public class RentACatTest {
 		// INITIALIZE THE TEST FIXTURE
 		// 1. Create a new RentACat object and assign to r
 		r = RentACat.createInstance();
-
 		// 2. Create a mock Cat with ID 1 and name "Jennyanydots", assign to c1
 		// TODO: Fill in
+		c1 = Mockito.mock(CatJenny.class);
+		c2 = Mockito.mock(CatOld.class);
+		c3 = Mockito.mock(CatMist.class);
+		/*
+		public Cat(int id, String name) {
+			_rented = false;
+			_id = id;
+			_name = name;
+		}
+		*/
 		
 		// 3. Create a mock Cat with ID 2 and name "Old Deuteronomy", assign to c2
 		// TODO: Fill in
-
+		//c2 = Mockito.mock(Cat.class);
 		// 4. Create a mock Cat with ID 3 and name "Mistoffelees", assign to c3
 		// TODO: Fill in
-		
+		//c3 = Mockito.mock(Cat.class);
 		// Hint: You will have to stub the mocked Cats to make them behave as if the ID
 		// is 1 and name is "Jennyanydots", etc.
 	}
@@ -66,6 +75,7 @@ public class RentACatTest {
 	@Test
 	public void testGetCatNullNumCats0() {
 		// TODO
+		assertEquals(r.getCat(2), null);
 	}
 
 	/**
@@ -79,6 +89,7 @@ public class RentACatTest {
 	@Test
 	public void testGetCatNumCats3() {
 		// TODO
+		assertEquals(2, r.getCat(2));
 	}
 
 	/**
@@ -91,6 +102,7 @@ public class RentACatTest {
 	@Test
 	public void testCatAvailableFalseNumCats0() {
 		// TODO
+		assertEquals(r.catAvailable(2), false);
 	}
 
 	/**
@@ -105,6 +117,7 @@ public class RentACatTest {
 	@Test
 	public void testCatAvailableTrueNumCats3() {
 		// TODO
+		assertEquals(r.catAvailable(2), true);
 	}
 
 	/**
@@ -119,6 +132,7 @@ public class RentACatTest {
 	@Test
 	public void testCatAvailableFalseNumCats3() {
 		// TODO
+		assertEquals(r.catAvailable(2), false);
 	}
 
 	/**
@@ -131,6 +145,7 @@ public class RentACatTest {
 	@Test
 	public void testCatExistsFalseNumCats0() {
 		// TODO
+		assertEquals(r.catExists(2), false);
 	}
 
 	/**
@@ -143,6 +158,7 @@ public class RentACatTest {
 	@Test
 	public void testCatExistsTrueNumCats3() {
 		// TODO
+		assertEquals(r.catExists(2), true);
 	}
 
 	/**
@@ -155,6 +171,7 @@ public class RentACatTest {
 	@Test
 	public void testListCatsNumCats0() {
 		// TODO
+		assertEquals(r.listCats(), "");
 	}
 
 	/**
@@ -168,6 +185,7 @@ public class RentACatTest {
 	@Test
 	public void testListCatsNumCats3() {
 		// TODO
+		assertEquals(r.listCats(), "ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n");
 	}
 
 	/**
@@ -180,6 +198,7 @@ public class RentACatTest {
 	@Test
 	public void testRentCatFailureNumCats0() {
 		// TODO
+		assertEquals(r.rentCat(2), false);
 	}
 
 	/**
@@ -197,6 +216,7 @@ public class RentACatTest {
 	@Test
 	public void testRentCatFailureNumCats3() {
 		// TODO
+		
 	}
 
 	/**
@@ -209,6 +229,7 @@ public class RentACatTest {
 	@Test
 	public void testReturnCatFailureNumCats0() {
 		// TODO
+		assertEquals(r.rentCat(2), false);
 	}
 
 	/**
