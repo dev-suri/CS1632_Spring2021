@@ -118,7 +118,7 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
-		r.rentCat(3);
+		Mockito.when(c3.getRented()).thenReturn(true);
 		assertEquals(r.catAvailable(2), true);
 	}
 
@@ -198,7 +198,7 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
-
+		Mockito.when(r.listCats()).thenReturn("ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n");
 		assertEquals(r.listCats(), "ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n");
 	}
 
@@ -271,6 +271,9 @@ public class RentACatTest {
 		r.addCat(c2);
 		r.addCat(c3);
 		r.rentCat(2);
+		Mockito.verify(c2, Mockito.times(1)).returnCat();
+		Mockito.verify(c1, Mockito.times(0)).returnCat();
+		Mockito.verify(c3, Mockito.times(0)).returnCat();
 		assertEquals(r.returnCat(2), true);
 	}
 }
