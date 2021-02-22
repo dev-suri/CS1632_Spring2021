@@ -9,24 +9,28 @@ import static org.junit.Assert.*;
 public class StepDefinitions {
 	private RentACat r;
 	private String listResult;
+	private boolean worked; // rent/return is successful - > true, else -> false
+	// essentially, when i rent, i store the result in this boolean, same with returning
+	// that way, i can check if it was successful or not
+	
 	
 	// TODO: Add more member variables and methods as necessary
 	@Then("the return is successful")
 	public void theReturnIsSuccessful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertEquals(true, true);
+		assertEquals(worked, true);
 	}
 	
 	@Then("the return is unsuccessful")
 	public void theReturnIsUnsuccessful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertEquals(true, true);
+		assertEquals(worked, false);
 	}
 
 	@When("I return cat number {int}")
 	public void iReturnCatNumber(Integer int1) {
 	    // Write code here that turns the phrase above into concrete actions
-	    r.returnCat(int1);
+	   worked = r.returnCat(int1);
 	}
 
 	@Given("a rent-a-cat facility")
@@ -52,7 +56,7 @@ public class StepDefinitions {
 	
 	@When("I rent cat number {int}")
 	public void iRentCatNumber(Integer id) {
-		r.rentCat(id);
+		worked = r.rentCat(id);
 	}
 	
 	@Then("the listing is: {string}")
@@ -63,12 +67,12 @@ public class StepDefinitions {
 	@Then("the rent is successful")
 	public void theRentIsSuccessful() {
 		// TODO: Implement
-		assertEquals(true, true);
+		assertEquals(worked, true);
 	}
 
 	@Then("the rent is unsuccessful")
 	public void theRentIsUnsuccessful() {
 		// TODO: Implement
-		assertEquals(true, true);
+		assertEquals(worked, false);
 	}
 }
